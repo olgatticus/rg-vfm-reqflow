@@ -13,7 +13,10 @@ Since each experiment was implemented independently, we provide separate reposit
 
 ___
 ## Overview 
+
 This codebase builds on ... (Kim et al., 2024) and implements two variants:
-- 
-- 
+- ...
+- ...
 ___
+
+## 
