@@ -1,0 +1,30 @@
+defaults:
+  - _default
+  - _self_
+
+data:
+  dataset: pdb
+  rectify: True
+
+  sampler:
+    max_batch_size: 128
+    max_num_res_squared: 1000000
+
+experiment:
+  is_training: True
+  debug: False
+  num_devices: 4
+  warm_start: path/to/qflow_ckpt # path to qflow ckpt which needs to be rectified
+  warm_start_cfg_override: True
+  resume_cfg_path: null
+  resume_ckpt_path: null
+  resume: False
+  training:
+    aux_loss_t_pass: 0.50
+  wandb:
+    name: reqflow_train_pdb_rectify
+    project: reqflow
+  checkpointer: # where to save checkpoints
+    dirpath: ./ckpts/${experiment.wandb.project}/${experiment.wandb.name}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+    save_last: True
+    save_top_k: -1
