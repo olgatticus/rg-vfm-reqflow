@@ -19,6 +19,32 @@ Our primary code modification is in `flow_module`: we replace the original loss 
 
 ___
 
+## Clone this repository
+
+The ReQFlow code is tracked as a **git submodule** (pointing to our fork [`congliuUvA/ReQFlow`](https://github.com/congliuUvA/ReQFlow), which contains the RG-VFM loss changes). A plain `git clone` leaves `ReQFlow/` empty — you must pull the submodule too:
+
+```bash
+# Clone and fetch the submodule in one step
+git clone --recurse-submodules git@github.com:olgatticus/rg-vfm-reqflow.git
+```
+
+If you already cloned without the flag, initialize the submodule afterwards:
+
+```bash
+git submodule update --init --recursive
+```
+
+To later sync the submodule to a newer pinned commit:
+
+```bash
+git pull
+git submodule update --recursive
+```
+
+> Note: model checkpoints (`.ckpt`) are **not** included in git — download them separately (see below).
+
+___
+
 ## Download Checkpoints
 
 Download checkpoints from Google Drive:
